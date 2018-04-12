@@ -1,0 +1,18 @@
+# Start COMPSs monitor
+/etc/init.d/compss-monitor start
+
+# Stop COMPSs monitor
+/etc/init.d/compss-monitor stop
+
+# COMPSs Monitor webpage
+firefox http://localhost:8080/compss-monitor
+
+# COMPSs Monitor Refresh time
+COMPSs Monitor Webpage > Configuration > Refresh Time
+
+# COMPSs Runtime Refresh time (runcompss flag)
+--monitoring=1000	(MS)
+
+# COMPSs Runtime task count (only for python applications)
+--task_count=3		(number of different tasks)
+

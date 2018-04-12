@@ -1,0 +1,51 @@
+This is the Readme for:
+Blast
+
+[Name]: Blast
+[Contact Person]: support-compss@bsc.es
+[Access Level]: public
+[License Agreement]: Apache2
+[Platform]: COMPSs
+
+[Body]
+== Description ==
+BLAST (Basic Local Alignment Search Tool) is an algorithm for comparing primary biological sequence information, such as the amino-acid sequences of different proteins or nucleotides of DNA sequences. BLAST enables a researcher to compare a query sequence with a library or database of sequences, and identify sequences that resemble the query sequence above a certain threshold.
+
+The COMPSs application contains three main blocks:
+
+- Split: the query sequences file is splitted in N fragments.
+
+- Alignment: each sequence fragment is compared against the database by the blast binary.
+
+- Assembly: assembly process combines all intermediate files into a single result file.
+
+
+== Execution instructions ==
+Usage:
+runcompss blast.Blast <debug> <binary> <database> <sequences> <#fragments> <tmpdir> <output> <cmd_args>
+
+where:
+		 * - debug: Set the debug mode on
+		 * - binary: Blast binary location
+		 * - database: Database Name
+		 * - sequences: Input sequences path
+		 * - #fragments: Fragments number
+		 * - tmpdir: Temporary directory
+		 * - output: Output file
+		 * - cmd_args: Command line Arguments of the Blast binary
+
+
+== Execution Example ==
+runcompss blast.Blast true /home/compss/tutorial_apps/java/blast/binary/blastall /sharedDisk/Blast/databases/swissprot/swissprot /sharedDisk/Blast/sequences/sargasso_test.fasta 8 /tmp/ /home/compss/out.txt
+
+
+== Build ==
+=== Option 1: Native java ===
+cd ~/tutorial_apps/java/blast/; javac src/main/java/blast/*.java
+cd src/main/java/; jar cf blast.jar blast/
+cd ../../../; mv src/main/java/blast.jar jar/
+
+=== Option 2: Maven ===
+cd ~/tutorial_apps/java/blast/
+mvn clean package
+

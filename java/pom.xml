@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- GENERAL INFORMATION -->
+        <groupId>es.bsc.compss.tutorial-apps.java</groupId> 
+	<artifactId>compss-tutorial-apps-java</artifactId>
+	<packaging>pom</packaging>
+	<parent>
+		<groupId>es.bsc.compss.tutorial-apps</groupId>
+		<artifactId>compss-tutorial-apps-all</artifactId>
+		<version>2.2</version>
+		<relativePath>..</relativePath>
+	</parent>
+
+
+	<!-- PROJECT INFORMATION -->
+	<name>COMP Superscalar Tutorial Apps in Java</name>
+	<description>Prepared Applications for the COMPSs Tutorial in Java</description>
+	<url>http://compss.bsc.es</url>
+	<inceptionYear>2015</inceptionYear>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+		</license>
+	</licenses>
+	<organization>
+		<name>BSC</name>
+		<url>http://www.bsc.es</url>
+	</organization>
+
+	<!-- PROPERTIES -->
+	<properties>
+	</properties>
+
+	<!-- SOURCE CONTROL MANAGEMENT -->
+	<scm>
+		<connection>scm:svn:https://compss.bsc.es/svn/bar/tutorial-apps/java/</connection>
+		<developerConnection>scm:svn:https://compss.bsc.es/svn/bar/tutorial-apps/java/</developerConnection>
+		<url>https://compss.bsc.es/svn/bar/tutorial-apps/java/</url>
+	</scm>
+
+	<!-- REPOSITORIES -->
+	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>http://repo1.maven.apache.org/maven2</url>
+		</repository>
+		<repository>
+			<id>grid-repo</id>
+			<name>BSC Grid computing and Clusters group</name>
+			<url>http://compss.bsc.es/artifactory/grid-devel-repo</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<releases>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>http://repo1.maven.apache.org/maven2</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<!-- DISTRIBUTION MANAGEMENT -->
+	<distributionManagement>
+		<repository>
+			<id>grid-repo</id>
+			<name>BSC Grid computing and Clusters group</name>
+			<url>http://compss.bsc.es/artifactory/grid-devel-repo</url>
+		</repository>
+	</distributionManagement>
+
+	<!-- DEPENDENCIES MANAGEMENT -->
+	<dependencyManagement>
+		<dependencies>
+			<!-- JAX WS -->
+			<dependency>
+				<groupId>com.sun.xml.ws</groupId>
+				<artifactId>jaxws-rt</artifactId>
+				<version>${jaxws.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<!-- BUILD -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>application-execution</id>
+						<phase>clean</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>find</executable> <!-- . -type f -not -name '*jar' | xargs rm</executable -->
+							<workingDirectory>${basedir}/jar/</workingDirectory>
+							<arguments>
+								<argument>${basedir}/jar/</argument>
+								<argument>-type</argument>
+								<argument>f</argument>
+								<argument>-not</argument>
+								<argument>-name</argument>
+								<argument>'*.jar'</argument>
+								<argument>-delete</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
+
+			</plugin>
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>exec-maven-plugin</artifactId>
+					<version>${maven-exec-plugin.version}</version>
+					<configuration>
+						<executable>runcompss</executable> <!-- . -type f -not -name '*jar' | xargs rm</executable -->
+						<workingDirectory>${basedir}/jar/</workingDirectory>
+						<skip>true</skip>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<!-- SUB-MODULES -->
+	<modules>
+		<!-- BLOCK 1 -->
+		<module>hello</module>
+		<module>simple</module>
+		<module>increment</module>
+		<module>matmul</module>
+		<module>sparseLU</module>
+		<module>kmeans</module>
+		<module>blast</module>
+		<module>wordcount</module>
+	</modules>
+</project>

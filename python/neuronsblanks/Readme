@@ -1,0 +1,30 @@
+This is the Readme for:
+Neurons_blanks
+
+[Name]: Neurons_blanks
+[Contact Person]: support-compss@bsc.es
+[Access Level]: public
+[License Agreement]: Apache2
+[Platform]: COMPSs
+
+[Body]
+== Description ==
+Neurons application with blanks. 
+Only for tutorial purposes.
+
+
+== Execution instructions ==
+Usage:
+runcompss --lang=python --pythonpath=$HOME/tutorial_apps/python/neuronsblanks /home/compss/tutorial_apps/python/neuronsblanks/neurons/ns-data-proc_compss_objects.py <size> <spikesFile>
+
+where:
+                 * - size: Size
+                 * - spikesFile: Absolute path to the spikes file
+
+
+== Execution Example ==
+runcompss --tracing --lang=python --pythonpath=$HOME/tutorial_apps/python/neuronsblanks /home/compss/tutorial_apps/python/neuronsblanks/neurons/ns-data-proc_compss_objects.py 128 /sharedDisk/neurons/spikes.dat
+
+
+== Build ==
+No build is required

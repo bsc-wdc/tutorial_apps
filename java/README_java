@@ -1,0 +1,77 @@
+=================== CHANGE KEYBOARD LAYOUT ====================
+
+ Menu -> Settings > Settings Manager Keyboard -> Layout
+
+
+==================== EXECUTE SAMPLE APPS ======================
+*** Applications code can be seen with Eclipse ***
+- Open eclipse by clicking the icon of the desktop
+- Select the workspace located in /home/compss/tutorial_apps/java/
+
+*** Commands to run the java COMPSs applications ***
+   Hello World:
+     cd /home/compss/tutorial_apps/java/hello/jar/
+     runcompss hello.Hello
+
+   Simple:
+     cd /home/compss/tutorial_apps/java/simple/jar/
+     runcompss simple.Simple 1
+
+   Increment:
+     cd /home/compss/tutorial_apps/java/increment/jar/
+     runcompss increment.Increment 10 1 2 3
+
+   Matmul:
+     cd /home/compss/tutorial_apps/java/matmul/jar/
+     runcompss matmul.objects.Matmul 16 4
+     runcompss matmul.files.Matmul 16 4
+     runcompss matmul.arrays.Matmul 16 4
+
+   SparseLU:
+     cd /home/compss/tutorial_apps/java/sparseLU/jar/
+     runcompss sparseLU.objects.SparseLU 16 4 
+     runcompss sparseLU.files.SparseLU 16 4
+     runcompss sparseLU.arrays.SparseLU 16 4
+  
+   KMeans:
+     cd /home/compss/tutorial_apps/java/kmeans/jar/
+     runcompss kmeans.KMeans 
+     runcompss kmeans.KMeans -c 4 -i 10 -n 2000 -d 2 -f 2
+
+   Blast:
+     cd /home/compss/tutorial_apps/java/blast/jar/
+     runcompss blast.Blast true /home/compss/tutorial_apps/java/blast/binary/blastall /sharedDisk/Blast/databases/swissprot/swissprot /sharedDisk/Blast/sequences/sargasso_test.fasta 8 /tmp/ /home/compss/out.txt
+
+   WordCount
+    cd /home/compss/tutorial_apps/java/wordcount/jar/
+    runcompss wordcount.uniqueFile.Wordcount /home/compss/tutorial_apps/java/wordcount/data/file_short.txt 650
+
+==================== TRACING COMPSs APPS ======================
+1- Add the -t option to the runcompss
+
+2- Execute paraver
+        wxparaver ~/.COMPSs/APPNAME_EXEC/trace/*.prv
+
+3- Load any paraver configuration from:
+        /opt/COMPSs/Dependencies/paraver/cfgs/
+
+
+==================== MONITORING COMPSs APPS ======================
+1- Add the -m option to the runcompss 
+
+2- Enable the COMPSs Monitor
+	/etc/init.d/compss-monitor start
+
+3- Open the webpage
+    	firefox http://localhost:8080/compss-monitor
+
+
+============================================================
+ Please find more details about the COMP Superscalar framework at: 
+
+    	http://compss.bsc.es
+
+ Contact us at:
+
+	support-compss@bsc.es
+

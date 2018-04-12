@@ -1,0 +1,49 @@
+This is the Readme for:
+Wordcount for MN
+
+[Name]: Wordcount MN
+[Contact Person]: support-compss@bsc.es
+[Access Level]: public
+[License Agreement]: GPL
+[Platform]: COMPSs
+
+[Body]
+ == Description ==
+Wordcount application
+
+== Versions ==
+There are two versions of Wordcount, depending on how the input data is given
+=== Version 1 ===
+''Single input file'', where all the text is given in the same file and the chunks are calculated with a BLOCK_SIZE parameter
+=== Version 2 ===
+''Multiple input files'', where the text fragments are already in different files under the same directory
+
+
+== Execution instructions ==
+Usage:
+runcompss wordcount.multipleFiles.Wordcount <DATA_FOLDER>
+runcompss wordcount.uniqueFile.Wordcount <DATA_FILE> <BLOCK_SIZE>
+
+where:
+                 * - DATA_FOLDER: Absolute path to the base folder of the dataset files
+                 * - DATA_FILE: Absolute path to the dabase file
+		 * - BLOCK_SIZE: Number of bytes of each block
+
+== Execution Example ==
+runcompss wordcount.multipleFiles.Wordcount ~/multipleDataset/
+runcompss wordcount.uniqueFile.Wordcount /home/compss/tutorial_apps/java/wordcount/data/file_short.txt 650 
+runcompss -m wordcount.uniqueFile.Wordcount /home/compss/tutorial_apps/java/wordcount/data/file_long.txt 250000
+runcompss -d wordcount.uniqueFile.Wordcount /home/compss/tutorial_apps/java/wordcount/data/file_short.txt 650
+runcompss -g wordcount.uniqueFile.Wordcount /home/compss/tutorial_apps/java/wordcount/data/file_short.txt 650
+
+== Build ==
+=== Option 1: Native java ===
+cd ~/tutorial_apps/java/wordcount/; 
+javac src/main/java/wordcount/multipleFiles/*.java; javac src/main/java/wordcount/uniqueFile/*.java;
+cd src/main/java/; jar cf wordcount.jar wordcount/
+cd ../../../; mv src/main/java/wordcount.jar jar/
+
+=== Option 2: Maven ===
+cd ~/tutorial_apps/java/wordcount/
+mvn clean package
+

@@ -1,0 +1,33 @@
+This is the Readme for:
+Hello 
+
+[Name]: Hello World
+[Contact Person]: support-compss@bsc.es
+[Access Level]: public
+[License Agreement]: Apache2
+[Platform]: COMPSs
+
+[Body]
+== Description ==
+The hello application is a Hello World! application. Its purpose is only to show the differences between a sequential execution and a COMPSs execution.
+
+== Execution instructions ==
+Usage:
+runcompss hello.Hello
+
+where:
+
+== Execution Example ==
+runcompss hello.Hello
+
+
+== Build ==
+=== Option 1: Native java ===
+cd ~/tutorial_apps/java/hello/; javac src/main/java/hello/*.java
+cd src/main/java/; jar cf hello.jar hello/
+cd ../../../; mv src/main/java/hello.jar jar/
+
+=== Option 2: Maven ===
+cd ~/tutorial_apps/java/hello/
+mvn clean package
+
