@@ -53,30 +53,14 @@ int main(int argc, char **argv) {
 		cout << " - M: " << M << "\n";
 		cout << " - val: " << val << "\n";
 
-		//initMatrix(&A,N,M,val);
 		A = Matrix::init(N,M,val);
 		B = Matrix::init(N,M,val);
 		C = Matrix::init(N,M,0.0);
-		//initMatrix(&B,N,M,val);
-		//initMatrix(&C,N,M,0.0);
-
-		cout << "Waiting for initialization...\n";
-
-
-		//compss_wait_on(A);
-		//compss_wait_on(B);
-		//compss_wait_on(C);
-
-
-		cout << "Initialization ends...\n";
 
 		for (int i=0; i<N; i++) {
                 	for (int j=0; j<N; j++) {
 
                         	for (int k=0; k<N; k++) {
-					/*Block Aik = A.data[i][k];
-					Block Bkj = B.data[k][j];
-                                	C.data[i][j]->multiply(Aik, Bkj);*/
                                 	multiplyBlocks(C.data[i][j], A.data[i][k], B.data[k][j]);
                         	}
 
@@ -86,7 +70,7 @@ int main(int argc, char **argv) {
         	for (int i=0; i<N; i++) {
                 	for (int j=0; j<N; j++) {
 
-                        	compss_wait_on(*C.data[i][j]);
+                        	compss_wait_on(C.data[i][j]);
 
                 	}
         	}
