@@ -26,13 +26,7 @@
 #include "Matrix.h"
 #include "Block.h"
 
-/*
-void initMatrix(Matrix *matrix, int mSize, int nSize, double val) {
-	*matrix = Matrix::init(mSize, nSize, val);
-}
-
 
 void multiplyBlocks(Block *block1, Block *block2, Block *block3) {
 	block1->multiply(*block2, *block3);
 }
-*/

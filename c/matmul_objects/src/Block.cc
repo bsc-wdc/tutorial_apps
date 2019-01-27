@@ -15,6 +15,8 @@
  */
 
 #include "Block.h"
+#include<iostream>
+using namespace std;
 
 Block::Block(int bSize) {
 	M = bSize;
@@ -34,8 +36,6 @@ Block *Block::init(int bSize, double initVal) {
 	return block;
 }
 
-#ifdef COMPSS_WORKER
-
 void Block::multiply(Block block1, Block block2) {
 	for (int i=0; i<M; i++) {
 		for (int j=0; j<M; j++) {
@@ -44,10 +44,8 @@ void Block::multiply(Block block1, Block block2) {
 			}
 		}
 	}
-	this->print();
+	//this->print();
 }
-
-#endif
 
 void Block::print() {
 	for (int i=0; i<M; i++) {

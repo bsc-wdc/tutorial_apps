@@ -15,6 +15,8 @@
  */
 
 #include "Matrix.h"
+#include<iostream>
+using namespace std;
 
 Matrix::Matrix(int mSize) {
 	N = mSize;
@@ -43,22 +45,4 @@ void Matrix::print() {
 		cout << "\r\n";
 	}
 }
-
-#ifdef COMPSS_WORKER
-
-void initMatrix(Matrix *matrix, int mSize, int nSize, double val) {
-	*matrix = Matrix::init(mSize, nSize, val);
-}
-
-void multiplyBlocks(Block *block1, Block *block2, Block *block3) {
-	block1->multiply(*block2, *block3);
-}
-
-
-/*#else
-
-extern void initMatrix(Matrix *matrix, int mSize, int nSize, double val);
-extern void multiplyBlocks(Block *block1, Block *block2, Block *block3);
-*/
-#endif
 

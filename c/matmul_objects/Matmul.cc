@@ -18,8 +18,6 @@
 #include <string.h>
 #include <vector>
 
-#define DEBUG_BINDING
-
 #include "Matmul.h"
 #include "Matrix.h"
 #include "Block.h"
@@ -59,23 +57,17 @@ int main(int argc, char **argv) {
 
 		for (int i=0; i<N; i++) {
                 	for (int j=0; j<N; j++) {
-
                         	for (int k=0; k<N; k++) {
                                 	multiplyBlocks(C.data[i][j], A.data[i][k], B.data[k][j]);
                         	}
-
                 	}
         	}
 
         	for (int i=0; i<N; i++) {
                 	for (int j=0; j<N; j++) {
-
                         	compss_wait_on(C.data[i][j]);
-
                 	}
         	}
-
-		compss_off();
 
 		if ((N <= 10) && (M <= 10)) {
 			cout << "Matrix A\n";
@@ -85,7 +77,7 @@ int main(int argc, char **argv) {
 			cout << "Matrix C\n";
 			C.print();
 		}
-
+		compss_off();
 	}
 
 	return 0;
