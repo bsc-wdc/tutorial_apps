@@ -19,15 +19,15 @@ Usage:
 runcompss --lang=python src/workcount_blocks.py <filePath> <resultPath> <blockSize>
 
 where:
-		 * - filePath: Absolute path of the file to parse
-		 * - resultPath: Absolute path to the result file
-		 * - blockSize: Size of each block
+        * - filePath: Absolute path of the file to parse
+        * - resultPath: Absolute path to the result file
+        * - blockSize: Size of each block
 
 
 == Execution Examples ==
-runcompss --lang=python src/wordcount_blocks.py $(pwd)/data/compss.txt result.txt 300000
-runcompss src/wordcount_blocks.py $(pwd)/data/compss.txt result.txt 300000
-python -m pycompss src/wordcount_blocks.py $(pwd)/data/compss.txt result.txt 300000
+runcompss --lang=python src/wordcount_blocks.py $(pwd)/data/compss.txt result.txt 3000
+runcompss src/wordcount_blocks.py $(pwd)/data/compss.txt result.txt 3000
+python -m pycompss src/wordcount_blocks.py $(pwd)/data/compss.txt result.txt 3000
 
 
 == Build ==

@@ -62,7 +62,7 @@ runcompss src/wordcount.py $(pwd)/data/
 
 ```
 cd ~/tutorial_apps/python/wordcount/
-runcompss src/wordcount_blocks.py $(pwd)/data/compss.txt result.txt 300000
+runcompss src/wordcount_blocks.py $(pwd)/data/compss.txt result.txt 3000
 ```
 
 * Wordcount merge
