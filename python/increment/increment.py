@@ -17,12 +17,15 @@
 
 # -*- coding: utf-8 -*-
 
+import sys
+
 from pycompss.api.task import task
 from pycompss.api.parameter import *
 
-FILENAME1="file1"
-FILENAME2="file2"
-FILENAME3="file3"
+FILENAME1 = "file1"
+FILENAME2 = "file2"
+FILENAME3 = "file3"
+
 
 def main_program():
     # Check and get parameters
@@ -36,7 +39,7 @@ def main_program():
 
     # Initialize counter files
     initializeCounters(counter1, counter2, counter3)
-    print "Initial counter values:"
+    print("Initial counter values:")
     printCounterValues()
 
     # Execute increment
@@ -46,13 +49,15 @@ def main_program():
         increment(FILENAME3)
 
     # Write final counters state (sync)
-    print "Final counter values:"
+    print("Final counter values:")
     printCounterValues()
 
 
 def usage():
-    print "[ERROR] Bad numnber of parameters"
-    print "    Usage: increment <numIterations> <counterValue1> <counterValue2> <counterValue3>"
+    print("[ERROR] Bad numnber of parameters")
+    print("    Usage: increment <numIterations> " +
+          "<counterValue1> <counterValue2> <counterValue3>")
+
 
 def initializeCounters(counter1, counter2, counter3):
     # Write value counter 1
@@ -69,6 +74,7 @@ def initializeCounters(counter1, counter2, counter3):
     fos = open(FILENAME3, 'w')
     fos.write(str(counter3))
     fos.close()
+
 
 def printCounterValues():
     from pycompss.api.api import compss_open
@@ -89,11 +95,12 @@ def printCounterValues():
     fis.close()
 
     # Print values
-    print "- Counter1 value is " + counter1
-    print "- Counter2 value is " + counter2
-    print "- Counter3 value is " + counter3
+    print("- Counter1 value is " + str(counter1))
+    print("- Counter2 value is " + str(counter2))
+    print("- Counter3 value is " + str(counter3))
 
-@task(filePath = FILE_INOUT)
+
+@task(filePath=FILE_INOUT)
 def increment(filePath):
     # Read value
     fis = open(filePath, 'r')
