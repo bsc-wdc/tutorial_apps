@@ -47,7 +47,7 @@ runcompss src/matmul.py 16 4
 * Matmul files
 
 ```
-cd ~/tutorial_apps/python/matmul-files/
+cd ~/tutorial_apps/python/matmul_files/
 runcompss src/matmul.py 4 4
 ```
 
