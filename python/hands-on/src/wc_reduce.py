@@ -17,10 +17,10 @@
 
 # -*- coding: utf-8 -*-
 
-'''Wordcount files - worker read'''
 import sys
 import os
 import time
+
 from pycompss.api.task import task
 from pycompss.api.parameter import *
 
@@ -71,6 +71,9 @@ def merge_two_dicts(dic1, dic2):
 if __name__ == "__main__":
     from pycompss.api.api import compss_wait_on
 
+    # Start counting time...
+    start_time = time.time()
+
     # Get the dataset path
     pathDataset = sys.argv[1]
 
@@ -79,30 +82,25 @@ if __name__ == "__main__":
     for fileName in os.listdir(pathDataset):
         paths.append(os.path.join(pathDataset, fileName))
 
-    # Start counting time...
-    startTime = time.time()
-
-    # Read file's content
-    data = []
-    for p in paths:
-        data.append(read_file(p))
-
-    # From all file's data execute a wordcount on it
+    # Read file's content execute a wordcount on each of them
     partialResult = []
-    for d in data:
-        partialResult.append(wordCount(d))
+    for p in paths:
+        data = read_file(p)
+        partialResult.append(wordCount(data))
 
     # Accumulate the partial results to get the final result.
     result = {}
     for partial in partialResult:
         result = merge_two_dicts(result, partial)
 
-
     # Wait for result
     result = compss_wait_on(result)
 
-    # Print results and ellapsed time
-    print "Ellapsed Time (s)"
-    print time.time()-startTime
+    elapsed_time = time.time() - start_time
 
-    print "Words: {}".format(sum(result.values()))
+    # Print the results and elapsed time
+    print("Word appearances:")
+    from pprint import pprint
+    pprint(result)
+    print("Elapsed Time (s): " + str(elapsed_time))
+    print("Words: ", sum(result.values()))
