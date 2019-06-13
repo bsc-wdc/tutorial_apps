@@ -103,4 +103,4 @@ if __name__ == "__main__":
     from pprint import pprint
     pprint(result)
     print("Elapsed Time (s): " + str(elapsed_time))
-    print("Words: ", sum(result.values()))
+    print("Words: " + str(sum(result.values())))

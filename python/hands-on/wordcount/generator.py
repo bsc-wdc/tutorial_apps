@@ -23,13 +23,10 @@ import os
 from loremipsum import *
 
 
-if __name__ == "__main__":
-    numFiles = int(sys.argv[1])
-    size = int(sys.argv[2])*1024*1024  # Mbytes to bytes
-    pathDataset = "dataset_{}f_{}mb".format(numFiles, (size/1024)/1024)
+def main(numFiles, size):
+    pathDataset = "dataset_{}f_{}mb".format(numFiles, int((size/1024)/1024))
     os.mkdir(pathDataset)
-
-    for i in xrange(numFiles):
+    for i in list(range(numFiles)):
         sizeText = 0
         text = ""
         fileName = "file{}.txt".format(i)
@@ -37,6 +34,15 @@ if __name__ == "__main__":
         with open(path, 'w') as f:
             while sizeText < size:
                 paragraph = generate_paragraph()
-                f.write(paragraph[2])
+                paragraph = paragraph[2].replace('.', ' ')
+                f.write(paragraph)
+                f.write('\n')
                 sizeText = os.path.getsize(path)
-        print "{} generated: size {} mb".format(fileName, (float(sizeText)/1024.0)/1024.0)
+        size_mbs = (float(sizeText)/1024.0)/1024.0
+        print("{} generated: size {} mb".format(fileName, int(size_mbs)))
+
+
+if __name__ == "__main__":
+    numFiles = int(sys.argv[1])
+    size = int(sys.argv[2])*1024*1024  # Mbytes to bytes
+    main(numFiles, size)

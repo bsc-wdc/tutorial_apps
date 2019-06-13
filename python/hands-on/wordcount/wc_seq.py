@@ -64,7 +64,7 @@ def merge_two_dicts(dic1, dic2):
 
 if __name__ == "__main__":
     # Start counting time...
-    startTime = time.time()
+    start_time = time.time()
 
     # Get the dataset path
     pathDataset = sys.argv[1]
@@ -92,4 +92,4 @@ if __name__ == "__main__":
     from pprint import pprint
     pprint(result)
     print("Elapsed Time (s): " + str(elapsed_time))
-    print("Words: ", sum(result.values()))
+    print("Words: " + str(sum(result.values())))

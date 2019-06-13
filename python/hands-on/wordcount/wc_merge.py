@@ -77,7 +77,7 @@ def mergeReduce(function, data):
     :return: result of reduce the data to a single value
     """
     from collections import deque
-    q = deque(xrange(len(data)))
+    q = deque(list(range(len(data))))
     while len(q):
         x = q.popleft()
         if len(q):
@@ -121,4 +121,4 @@ if __name__ == "__main__":
     from pprint import pprint
     pprint(result)
     print("Elapsed Time (s): " + str(elapsed_time))
-    print("Words: ", sum(result.values()))
+    print("Words: " + str(sum(result.values())))
