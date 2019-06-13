@@ -25,7 +25,7 @@ from pycompss.api.task import task
 from pycompss.api.parameter import *
 
 
-@task(returns=list)
+@task(file_path=FILE_IN, returns=list)
 def read_file(file_path):
     """ Read a file and return a list of words.
     :param file_path: file's path
