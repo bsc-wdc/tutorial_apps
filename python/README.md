@@ -30,25 +30,25 @@ cd ~/tutorial_apps/python/increment/
 runcompss src/increment.py 10 1 2 3
 ```
 
-* Word Count
+* Matmul files
 
 ```
-cd ~/tutorial_apps/python/wordcount/
-runcompss src/wordcount.py $(pwd)/data/
+cd ~/tutorial_apps/python/matmul_files/
+runcompss src/matmul_files.py 4 4
 ```
 
 * Matmul objects
 
 ```
-cd ~/tutorial_apps/python/matmul-objects/
-runcompss src/matmul.py 16 4
+cd ~/tutorial_apps/python/matmul_objects/
+runcompss src/matmul_objects.py 16 4
 ```
 
-* Matmul files
+* Word Count
 
 ```
-cd ~/tutorial_apps/python/matmul_files/
-runcompss src/matmul.py 4 4
+cd ~/tutorial_apps/python/wordcount/
+runcompss src/wordcount.py $(pwd)/data/
 ```
 
 * Neurons
