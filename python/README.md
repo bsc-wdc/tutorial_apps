@@ -1,18 +1,20 @@
 # Python Tutorial Applications
 
-## CHANGE KEYBOARD LAYOUT
-
- Menu -> Settings > Settings Manager Keyboard -> Layout
+This folder contains all PyCOMPSs related tutorial applications and notebooks.
 
 
-## EXECUTE PYTHON SAMPLE APPS
+## How to execute the sample apps
 
-### Applications code can be seen with Eclipse
+### Prerequisites
 
-* Open eclipse by clicking the icon of the desktop
-* Select the workspace located in ```~/tutorial_apps/python/```
+* Python
+* COMPSs installation
 
-### Commands to run the pyCOMPSs applications
+For more information, please check the [Installation Manual]{http://compss.bsc.es/releases/compss/latest/docs/COMPSs_Installation_Manual.pdf}
+
+* Jupyter notebook (only for notebooks)
+
+### Commands to run the PyCOMPSs applications
 
 * Simple
 
@@ -56,34 +58,70 @@ cd ~/tutorial_apps/python/neurons/
 runcompss src/ns-data-proc_compss_objects.py 128 /sharedDisk/neurons/spikes.dat
 ```
 
-### Run the applications from Eclipse (without tracing)
+### Commands to run the PyCOMPSs notebooks
 
-* Run -> External Tools -> compss-matmul
-* Run -> External Tools -> compss-neurons
+Just start the Jupyter notebook server and open the desired notebook:
+
+```
+cd $HOME
+jupyter-notebook
+```
+
+Alternatively, it is possible to open a single notebook:
+
+```
+jupyter-notebook <NOTEBOOK_NAME>.ipynb
+```
 
 
 ## TRACING COMPSs APPS
 
-1. Add the ```-t``` option to the runcompss
-2. Execute paraver
+1. Add the ```-t``` option to the runcompss.
+2. Execute paraver:
 
-   ```wxparaver ~/.COMPSs/APPNAME_EXEC/trace/*.prv```
+   ```
+   wxparaver ~/.COMPSs/APPNAME_EXEC/trace/*.prv
+   ```
 
-3. Load any paraver configuration from
+3. Load any paraver configuration from:
 
    ```/opt/COMPSs/Dependencies/paraver/cfgs/```
 
 
 ## MONITORING COMPSs APPS
 
-1. Add the ```-m``` option to the runcompss
-2. Enable the COMPSs Monitor
+1. Add the ```-m``` option to the runcompss.
+2. Enable the COMPSs Monitor:
 
-   ```/etc/init.d/compss-monitor start```
+   ```
+   /etc/init.d/compss-monitor start
+   ```
 
-3. Open the webpage
+3. Open the webpage:
 
-   ```firefox http://localhost:8080/compss-monitor```
+   ```
+   firefox http://localhost:8080/compss-monitor
+   ```
+
+
+## VM instructions
+
+### Change keyboard layout
+
+```
+Menu -> Settings > Settings Manager Keyboard -> Layout
+```
+
+### Applications code can be seen with Eclipse
+
+* Open eclipse by clicking the icon of the desktop
+* Select the workspace located in ```~/tutorial_apps/python/```
+
+### Run the applications from Eclipse (without tracing)
+
+* Run -> External Tools -> compss-matmul
+* Run -> External Tools -> compss-neurons
+
 
 
 --------------------------------------------------------------
