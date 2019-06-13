@@ -14,17 +14,17 @@ Neurons application
 
 == Execution instructions ==
 Usage:
-runcompss --lang=python /home/compss/tutorial_apps/python/neurons/neurons/ns-data-proc_compss_objects.py 128 <size> <spikesFile>
+runcompss --lang=python src/neurons.py 128 <size> <spikesFile>
 
 where:
 		 * - size: Size
 		 * - spikesFile: Absolute path to the spikes file
 
 
-== Execution Example ==
-runcompss --lang=python /home/compss/tutorial_apps/python/neurons/neurons/ns-data-proc_compss_objects.py 128 /sharedDisk/neurons/spikes.dat
-runcompss /home/compss/tutorial_apps/python/neurons/neurons/ns-data-proc_compss_objects.py 128 /sharedDisk/neurons/spikes.dat
+== Execution Examples ==
+runcompss --lang=python src/neurons.py 128 $(pwd)/data/spikes.dat
+runcompss src/neurons.py 128 $(pwd)/data/spikes.dat
+python -m pycompss src/neurons.py 128 $(pwd)/data/spikes.dat
 
 == Build ==
 No build is required
-

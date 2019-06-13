@@ -44,6 +44,13 @@ cd ~/tutorial_apps/python/matmul_objects/
 runcompss src/matmul_objects.py 16 4
 ```
 
+* Neurons
+
+```
+cd ~/tutorial_apps/python/neurons/
+runcompss src/neurons.py 128 $(pwd)/data/spikes.dat
+```
+
 * Word Count
 
 ```
@@ -51,12 +58,7 @@ cd ~/tutorial_apps/python/wordcount/
 runcompss src/wordcount.py $(pwd)/data/
 ```
 
-* Neurons
 
-```
-cd ~/tutorial_apps/python/neurons/
-runcompss src/ns-data-proc_compss_objects.py 128 /sharedDisk/neurons/spikes.dat
-```
 
 ### Commands to run the PyCOMPSs notebooks
 
