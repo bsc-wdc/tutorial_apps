@@ -19,6 +19,8 @@
 
 import sys
 import os
+import time
+
 from pycompss.api.task import task
 from pycompss.api.parameter import *
 
@@ -75,7 +77,7 @@ def mergeReduce(function, data):
     :return: result of reduce the data to a single value
     """
     from collections import deque
-    q = deque(xrange(len(data)))
+    q = deque(list(range(len(data))))
     while len(q):
         x = q.popleft()
         if len(q):
@@ -88,6 +90,9 @@ def mergeReduce(function, data):
 
 if __name__ == "__main__":
     from pycompss.api.api import compss_wait_on
+
+    # Start counting time...
+    start_time = time.time()
 
     # Get the dataset path
     pathDataset = sys.argv[1]
@@ -109,7 +114,11 @@ if __name__ == "__main__":
     # Wait for result
     result = compss_wait_on(result)
 
-    print "Result:"
+    elapsed_time = time.time() - start_time
+
+    # Print the results and elapsed time
+    print("Word appearances:")
     from pprint import pprint
     pprint(result)
-    print "Words: {}".format(sum(result.values()))
+    print("Elapsed Time (s): " + str(elapsed_time))
+    print("Words: " + str(sum(result.values())))
