@@ -12,7 +12,8 @@ This folder contains all PyCOMPSs related tutorial applications and notebooks.
 
 For more information, please check the [Installation Manual](http://compss.bsc.es/releases/compss/latest/docs/COMPSs_Installation_Manual.pdf)
 
-* Jupyter notebook (only for notebooks)
+* Jupyter (only for notebooks)
+* ipywidgets (only for some notebooks)
 
 ### Commands to run the PyCOMPSs applications
 
