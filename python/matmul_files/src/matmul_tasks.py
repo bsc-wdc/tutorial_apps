@@ -17,6 +17,10 @@
 
 # -*- coding: utf-8 -*-
 
+from pycompss.api.task import task
+from pycompss.api.parameter import *
+
+
 def load_block(fi):
     b = []
     f = open(fi, 'r')
@@ -29,6 +33,7 @@ def load_block(fi):
     f.close()
     return b
 
+
 def store_block(b, fi, size):
     f = open(fi, 'w')
     for row in b:
@@ -40,12 +45,9 @@ def store_block(b, fi, size):
         f.write('\n')
 
 
-### TASK SELECTION ###
+# ## TASK SELECTION ## #
 
-from pycompss.api.task import task
-from pycompss.api.parameter import *
-
-@task(fa = FILE, fb = FILE, fc = FILE_INOUT)
+@task(fa=FILE, fb=FILE, fc=FILE_INOUT)
 def multiply(fa, fb, fc, size):
     a = load_block(fa)
     b = load_block(fb)
@@ -53,5 +55,5 @@ def multiply(fa, fb, fc, size):
     for i in range(size):
         for j in range(size):
             for k in range(size):
-                c[i][j] += a[i][k] * b[k][j];
+                c[i][j] += a[i][k] * b[k][j]
     store_block(c, fc, size)

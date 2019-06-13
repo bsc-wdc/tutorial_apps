@@ -17,21 +17,23 @@
 
 # -*- coding: utf-8 -*-
 
+
 def initialize_variables():
     for i in range(MSIZE):
         A.append([])
         B.append([])
         C.append([])
         for j in range(MSIZE):
-            A[i].append("A.%d.%d" % (i,j))
-            B[i].append("B.%d.%d" % (i,j))
-            C[i].append("C.%d.%d" % (i,j))
+            A[i].append("A.%d.%d" % (i, j))
+            B[i].append("B.%d.%d" % (i, j))
+            C[i].append("C.%d.%d" % (i, j))
+
 
 def fill_matrices():
     for c in ['A', 'B', 'C']:
         for i in range(MSIZE):
             for j in range(MSIZE):
-                tmp = "%s.%d.%d" % (c,i,j)
+                tmp = "%s.%d.%d" % (c, i, j)
                 f = open(tmp, 'w')
                 for _ in range(BSIZE):
                     for jj in range(BSIZE):
@@ -45,12 +47,11 @@ def fill_matrices():
                 f.close()
 
 
-### MAIN PROGRAM ###
+# ## MAIN PROGRAM ## #
 
 if __name__ == "__main__":
     import sys
     from matmul_tasks import multiply
-
 
     args = sys.argv[1:]
     MSIZE = int(args[0])
