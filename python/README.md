@@ -62,7 +62,9 @@ runcompss src/wordcount.py $(pwd)/data/
 
 ### Commands to run the PyCOMPSs notebooks
 
-Just start the Jupyter notebook server and open the desired notebook exploring the folder structure:
+The Jupyter notebooks with PyCOMPSs are located into the ```tutorial_apps/python/notebooks``` folder.
+
+To run them, just start the Jupyter notebook server and open the desired notebook exploring the folder structure:
 
 ```
 cd $HOME
@@ -78,7 +80,7 @@ jupyter-notebook <NOTEBOOK_NAME>.ipynb
 
 ## Tracing PyCOMPSs Apps
 
-1. Add the ```-t``` option to the runcompss.
+1. Add the ```-t``` option to the runcompss (or the ```tracing=True``` flag when starting the runtime in the notebooks).
 2. Execute paraver:
    ```
    wxparaver ~/.COMPSs/APPNAME_EXEC/trace/*.prv
@@ -91,11 +93,11 @@ jupyter-notebook <NOTEBOOK_NAME>.ipynb
 
 ## Monitoring PyCOMPSs Apps
 
-1. Add the ```-m``` option to the runcompss.
-2. Enable the COMPSs Monitor:
+1. Enable the COMPSs Monitor:
    ```
    /etc/init.d/compss-monitor start
    ```
+2. Add the ```-m``` option to the runcompss (or the ```monitor=<REFRESH_RATE>``` flag when starting the runtime in the notebooks).
 3. Open the webpage:
    ```
    firefox http://localhost:8080/compss-monitor
