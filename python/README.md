@@ -74,7 +74,7 @@ jupyter-notebook <NOTEBOOK_NAME>.ipynb
 ```
 
 
-## TRACING COMPSs APPS
+## Tracing PyCOMPSs Apps
 
 1. Add the ```-t``` option to the runcompss.
 2. Execute paraver:
@@ -87,7 +87,7 @@ jupyter-notebook <NOTEBOOK_NAME>.ipynb
    ```
 
 
-## MONITORING COMPSs APPS
+## Monitoring PyCOMPSs Apps
 
 1. Add the ```-m``` option to the runcompss.
 2. Enable the COMPSs Monitor:
@@ -123,8 +123,8 @@ Menu -> Settings > Settings Manager Keyboard -> Layout
 
 Please find more details about the COMP Superscalar framework at:
 
-    	<http://compss.bsc.es>
+<http://compss.bsc.es>
 
- Contact us at:
+Contact us at:
 
-	    <support-compss@bsc.es>
+<support-compss@bsc.es>
