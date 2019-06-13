@@ -1,5 +1,5 @@
 This is the Readme for:
-Matmul 
+Matmul
 
 [Name]: Matrix multiplication with Files
 [Contact Person]: support-compss@bsc.es
@@ -18,18 +18,18 @@ In this implementation, A and B are square matrices (same number of rows and col
 
 == Execution instructions ==
 Usage:
-runcompss --lang=python /home/compss/tutorial_apps/python/matmul-files/matmul.py <numberOfBlocks> <blockSize>
+runcompss --lang=python src/matmul_files.py <numberOfBlocks> <blockSize>
 
 where:
-		 * - numberOfBlocks: Number of blocks inside each matrix
-		 * - blockSize: Size of each block
+        * - numberOfBlocks: Number of blocks inside each matrix
+        * - blockSize: Size of each block
 
 
-== Execution Example ==
-runcompss --lang=python /home/compss/tutorial_apps/python/matmul-files/matmul.py 4 4
-runcompss /home/compss/tutorial_apps/python/matmul-files/matmul.py 4 4
+== Execution Examples ==
+runcompss --lang=python src/matmul_files.py 4 4
+runcompss src/matmul_files.py 4 4
+python -m pycompss src/matmul_files.py 4 4
 
 
 == Build ==
 No build is required
-
