@@ -10,7 +10,7 @@ This folder contains all PyCOMPSs related tutorial applications and notebooks.
 * Python
 * COMPSs installation
 
-For more information, please check the [Installation Manual]{http://compss.bsc.es/releases/compss/latest/docs/COMPSs_Installation_Manual.pdf}
+For more information, please check the [Installation Manual](http://compss.bsc.es/releases/compss/latest/docs/COMPSs_Installation_Manual.pdf)
 
 * Jupyter notebook (only for notebooks)
 
@@ -60,7 +60,7 @@ runcompss src/ns-data-proc_compss_objects.py 128 /sharedDisk/neurons/spikes.dat
 
 ### Commands to run the PyCOMPSs notebooks
 
-Just start the Jupyter notebook server and open the desired notebook:
+Just start the Jupyter notebook server and open the desired notebook exploring the folder structure:
 
 ```
 cd $HOME
@@ -78,31 +78,26 @@ jupyter-notebook <NOTEBOOK_NAME>.ipynb
 
 1. Add the ```-t``` option to the runcompss.
 2. Execute paraver:
-
    ```
    wxparaver ~/.COMPSs/APPNAME_EXEC/trace/*.prv
    ```
-
 3. Load any paraver configuration from:
-
-   ```/opt/COMPSs/Dependencies/paraver/cfgs/```
+   ```
+   /opt/COMPSs/Dependencies/paraver/cfgs/
+   ```
 
 
 ## MONITORING COMPSs APPS
 
 1. Add the ```-m``` option to the runcompss.
 2. Enable the COMPSs Monitor:
-
    ```
    /etc/init.d/compss-monitor start
    ```
-
 3. Open the webpage:
-
    ```
    firefox http://localhost:8080/compss-monitor
    ```
-
 
 ## VM instructions
 
