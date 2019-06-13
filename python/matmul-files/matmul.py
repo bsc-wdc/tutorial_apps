@@ -1,5 +1,6 @@
+#!/usr/bin/python
 #
-#  Copyright 2002-2015 Barcelona Supercomputing Center (www.bsc.es)
+#  Copyright 2002-2019 Barcelona Supercomputing Center (www.bsc.es)
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -13,6 +14,8 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 #
+
+# -*- coding: utf-8 -*-
 
 def initialize_variables():
     for i in range(MSIZE):
@@ -52,16 +55,15 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     MSIZE = int(args[0])
     BSIZE = int(args[1])
-    
+
     A = []
     B = []
     C = []
-    
+
     initialize_variables()
     fill_matrices()
-    
+
     for i in range(MSIZE):
         for j in range(MSIZE):
             for k in range(MSIZE):
                 multiply(A[i][k], B[k][j], C[i][j], BSIZE)
-    

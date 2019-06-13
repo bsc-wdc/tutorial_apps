@@ -1,5 +1,6 @@
+#!/usr/bin/python
 #
-#  Copyright 2002-2015 Barcelona Supercomputing Center (www.bsc.es)
+#  Copyright 2002-2019 Barcelona Supercomputing Center (www.bsc.es)
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -13,6 +14,8 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 #
+
+# -*- coding: utf-8 -*-
 
 def load_block(fi):
     b = []
@@ -34,7 +37,7 @@ def store_block(b, fi, size):
             f.write(str(num))
             if j < size - 1:
                 f.write(' ')
-        f.write('\n')  
+        f.write('\n')
 
 
 ### TASK SELECTION ###
@@ -52,4 +55,3 @@ def multiply(fa, fb, fc, size):
             for k in range(size):
                 c[i][j] += a[i][k] * b[k][j];
     store_block(c, fc, size)
-

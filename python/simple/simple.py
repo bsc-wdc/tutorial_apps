@@ -1,5 +1,6 @@
+#!/usr/bin/python
 #
-#  Copyright 2002-2015 Barcelona Supercomputing Center (www.bsc.es)
+#  Copyright 2002-2019 Barcelona Supercomputing Center (www.bsc.es)
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -13,6 +14,9 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 #
+
+# -*- coding: utf-8 -*-
+
 from pycompss.api.parameter import *
 from pycompss.api.task import task
 
@@ -22,25 +26,25 @@ def main_program():
     # Check and get parameters
     if len(sys.argv) != 2:
         usage()
-        exit(-1) 
+        exit(-1)
     initialValue = sys.argv[1]
     fileName="counter"
-    
+
     # Write value
     fos = open(fileName, 'w')
     fos.write(initialValue)
     fos.close()
     print "Initial counter value is " + initialValue
-    
+
     # Execute increment
     increment(fileName)
-    
+
     # Write new value
     fis = compss_open(fileName, 'r+')
     finalValue = fis.read()
     fis.close()
     print "Final counter value is " + finalValue
-    
+
 @task(filePath = FILE_INOUT)
 def increment(filePath):
     # Read value
@@ -60,4 +64,3 @@ def usage():
 
 if __name__ == "__main__":
     main_program()
-    

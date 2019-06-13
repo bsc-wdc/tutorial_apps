@@ -1,5 +1,6 @@
+#!/usr/bin/python
 #
-#  Copyright 2002-2015 Barcelona Supercomputing Center (www.bsc.es)
+#  Copyright 2002-2019 Barcelona Supercomputing Center (www.bsc.es)
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -14,8 +15,9 @@
 #  limitations under the License.
 #
 
+# -*- coding: utf-8 -*-
+
 maxlag = 200
 num_surrs = 200
 #num_surrs = 1000
-#num_surrs = 20 
-
+#num_surrs = 20
