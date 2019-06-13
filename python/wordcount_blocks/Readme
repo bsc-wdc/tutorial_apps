@@ -16,7 +16,7 @@ To allow parallelism the file is divided in blocks that are treated separately a
 
 == Execution instructions ==
 Usage:
-runcompss --lang=python src/workcount.py <filePath> <resultPath> <blockSize>
+runcompss --lang=python src/workcount_blocks.py <filePath> <resultPath> <blockSize>
 
 where:
 		 * - filePath: Absolute path of the file to parse
@@ -25,9 +25,9 @@ where:
 
 
 == Execution Examples ==
-runcompss --lang=python src/wordcount.py $(pwd)/data/compss.txt result.txt 300000
-runcompss src/wordcount.py $(pwd)/data/compss.txt result.txt 300000
-python -m pycompss src/wordcount.py $(pwd)/data/compss.txt result.txt 300000
+runcompss --lang=python src/wordcount_blocks.py $(pwd)/data/compss.txt result.txt 300000
+runcompss src/wordcount_blocks.py $(pwd)/data/compss.txt result.txt 300000
+python -m pycompss src/wordcount_blocks.py $(pwd)/data/compss.txt result.txt 300000
 
 
 == Build ==

@@ -16,16 +16,16 @@ To allow parallelism every file is treated separately and merged afterwards.
 
 == Execution instructions ==
 Usage:
-runcompss --lang=python src/wordcount.py <datasetPath>
+runcompss --lang=python src/wordcount_merge.py <datasetPath>
 
 where:
 		 * - datasetPath: Absolute path of the file to parse (e.g. /home/compss/tutorial_apps/python/wordcount/data/)
 
 
 == Execution Examples ==
-runcompss --lang=python src/wordcount.py $(pwd)/data/
-runcompss src/wordcount.py $(pwd)/data/
-python -m pycompss src/wordcount.py $(pwd)/data/
+runcompss --lang=python src/wordcount_merge.py $(pwd)/data/
+runcompss src/wordcount_merge.py $(pwd)/data/
+python -m pycompss src/wordcount_merge.py $(pwd)/data/
 
 
 == Build ==
