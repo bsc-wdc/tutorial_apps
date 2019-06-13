@@ -51,7 +51,21 @@ cd ~/tutorial_apps/python/simple/
 runcompss --lang=python src/simple.py 1
 ```
 
-* Word Count
+* Wordcount
+
+```
+cd ~/tutorial_apps/python/wordcount/
+runcompss src/wordcount.py $(pwd)/data/
+```
+
+* Wordcount blocks
+
+```
+cd ~/tutorial_apps/python/wordcount/
+runcompss src/wordcount.py $(pwd)/data/compss.txt result.txt 300000
+```
+
+* Wordcount merge
 
 ```
 cd ~/tutorial_apps/python/wordcount/
