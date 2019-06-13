@@ -16,13 +16,6 @@ For more information, please check the [Installation Manual](http://compss.bsc.e
 
 ### Commands to run the PyCOMPSs applications
 
-* Simple
-
-```
-cd ~/tutorial_apps/python/simple/
-runcompss --lang=python src/simple.py 1
-```
-
 * Increment
 
 ```
@@ -49,6 +42,13 @@ runcompss src/matmul_objects.py 16 4
 ```
 cd ~/tutorial_apps/python/neurons/
 runcompss src/neurons.py 128 $(pwd)/data/spikes.dat
+```
+
+* Simple
+
+```
+cd ~/tutorial_apps/python/simple/
+runcompss --lang=python src/simple.py 1
 ```
 
 * Word Count
