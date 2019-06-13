@@ -17,8 +17,11 @@
 
 # -*- coding: utf-8 -*-
 
+import sys
+
 from pycompss.api.parameter import *
 from pycompss.api.task import task
+
 
 def main_program():
     from pycompss.api.api import compss_open
@@ -28,13 +31,13 @@ def main_program():
         usage()
         exit(-1)
     initialValue = sys.argv[1]
-    fileName="counter"
+    fileName = "counter"
 
     # Write value
     fos = open(fileName, 'w')
     fos.write(initialValue)
     fos.close()
-    print "Initial counter value is " + initialValue
+    print("Initial counter value is " + str(initialValue))
 
     # Execute increment
     increment(fileName)
@@ -43,9 +46,10 @@ def main_program():
     fis = compss_open(fileName, 'r+')
     finalValue = fis.read()
     fis.close()
-    print "Final counter value is " + finalValue
+    print("Final counter value is " + str(finalValue))
 
-@task(filePath = FILE_INOUT)
+
+@task(filePath=FILE_INOUT)
 def increment(filePath):
     # Read value
     fis = open(filePath, 'r')
@@ -57,9 +61,10 @@ def increment(filePath):
     fos.write(str(int(value) + 1))
     fos.close()
 
+
 def usage():
-    print "[ERROR] Bad numnber of parameters"
-    print "    Usage: simple <counterValue>"
+    print("[ERROR] Bad number of parameters.")
+    print("        Usage: simple <counterValue>")
 
 
 if __name__ == "__main__":
