@@ -1,0 +1,34 @@
+This is the Readme for:
+WordCount
+
+[Name]: Word Count
+[Contact Person]: support-compss@bsc.es
+[Access Level]: public
+[License Agreement]: Apache2
+[Platform]: COMPSs
+
+[Body]
+== Description ==
+Wordcount is an application that counts the number of words of a given file.
+
+To allow parallelism the file is divided in blocks that are treated separately and merged afterwards.
+
+
+== Execution instructions ==
+Usage:
+runcompss --lang=python src/workcount_blocks.py <filePath> <resultPath> <blockSize>
+
+where:
+        * - filePath: Absolute path of the file to parse
+        * - resultPath: Absolute path to the result file
+        * - blockSize: Size of each block
+
+
+== Execution Examples ==
+runcompss --lang=python src/wordcount_blocks.py $(pwd)/data/compss.txt result.txt 3000
+runcompss src/wordcount_blocks.py $(pwd)/data/compss.txt result.txt 3000
+python -m pycompss src/wordcount_blocks.py $(pwd)/data/compss.txt result.txt 3000
+
+
+== Build ==
+No build is required
