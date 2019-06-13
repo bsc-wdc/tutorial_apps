@@ -19,11 +19,13 @@
 
 import sys
 import os
+import time
+
 from pycompss.api.task import task
 from pycompss.api.parameter import *
 
 
-@task(file_path = FILE_IN, returns=list)
+@task(file_path=FILE_IN, returns=list)
 def read_file(file_path):
     """ Read a file and return a list of words.
     :param file_path: file's path
@@ -69,6 +71,9 @@ def merge_two_dicts(dic1, dic2):
 if __name__ == "__main__":
     from pycompss.api.api import compss_wait_on
 
+    # Start counting time...
+    start_time = time.time()
+
     # Get the dataset path
     pathDataset = sys.argv[1]
 
@@ -91,7 +96,11 @@ if __name__ == "__main__":
     # Wait for result
     result = compss_wait_on(result)
 
-    print "Result:"
+    elapsed_time = time.time() - start_time
+
+    # Print the results and elapsed time
+    print("Word appearances:")
     from pprint import pprint
     pprint(result)
-    print "Words: {}".format(sum(result.values()))
+    print("Elapsed Time (s): " + str(elapsed_time))
+    print("Words: " + str(sum(result.values())))

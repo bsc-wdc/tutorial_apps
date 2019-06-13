@@ -19,7 +19,7 @@ Usage:
 runcompss --lang=python src/wordcount.py <datasetPath>
 
 where:
-		 * - datasetPath: Absolute path of the file to parse (e.g. /home/compss/tutorial_apps/python/wordcount/data/)
+        * - datasetPath: Absolute path of the file to parse (e.g. /home/compss/tutorial_apps/python/wordcount/data/)
 
 
 == Execution Examples ==
