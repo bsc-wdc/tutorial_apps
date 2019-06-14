@@ -59,6 +59,7 @@
                     <workingDirectory>${basedir}/</workingDirectory>
                     <arguments>
                         <argument>--lang=python</argument>
+                        <argument>--pythonpath=${basedir}/src/</argument>
                         <argument>${basedir}/src/increment.py</argument>
                         <argument>5</argument>
                         <argument>1</argument>

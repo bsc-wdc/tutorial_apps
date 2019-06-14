@@ -59,6 +59,7 @@
                     <workingDirectory>${basedir}/</workingDirectory>
                     <arguments>
                         <argument>--lang=python</argument>
+                        <argument>--pythonpath=${basedir}/src/</argument>
                         <argument>${basedir}/src/wordcount_merge.py</argument>
                         <argument>${basedir}/data</argument>
                     </arguments>

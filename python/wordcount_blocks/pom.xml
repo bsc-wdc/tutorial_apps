@@ -59,6 +59,7 @@
                     <workingDirectory>${basedir}/</workingDirectory>
                     <arguments>
                         <argument>--lang=python</argument>
+                        <argument>--pythonpath=${basedir}/src/</argument>
                         <argument>${basedir}/src/wordcount_blocks.py</argument>
                         <argument>${basedir}/data/compss.txt</argument>
                         <argument>${basedir}/result.txt</argument>
