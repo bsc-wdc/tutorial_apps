@@ -56,6 +56,7 @@
                     <workingDirectory>${basedir}/</workingDirectory>
                     <arguments>
                         <argument>--lang=python</argument>
+                        <argument>--pythonpath=${basedir}/src/</argument>
                         <argument>${basedir}/src/matmul_files.py</argument>
                         <argument>8</argument>
                         <argument>4</argument>
