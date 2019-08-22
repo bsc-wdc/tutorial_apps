@@ -4,19 +4,19 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<!-- GENERAL INFORMATION -->
-  <groupId>es.bsc.compss.tutorial-apps.python</groupId>
-	<artifactId>compss-tutorial-apps-python</artifactId>
+  <groupId>es.bsc.compss.tutorial-apps.python.notebooks</groupId>
+	<artifactId>compss-tutorial-apps-python-notebooks</artifactId>
 	<packaging>pom</packaging>
 	<parent>
-		<groupId>es.bsc.compss.tutorial-apps</groupId>
-		<artifactId>compss-tutorial-apps-all</artifactId>
+		<groupId>es.bsc.compss.tutorial-apps.python</groupId>
+		<artifactId>compss-tutorial-apps-python</artifactId>
 		<version>2.5.rc1908</version>
 		<relativePath>..</relativePath>
 	</parent>
 
 	<!-- PROJECT INFORMATION -->
-	<name>COMP Superscalar Tutorial Apps in Python</name>
-	<description>Prepared Applications for the COMPSs Tutorial in Python</description>
+	<name>Notebooks</name>
+	<description>Prepared Notebooks for the COMPSs Tutorial in Python</description>
 	<url>http://compss.bsc.es</url>
 	<inceptionYear>2015</inceptionYear>
 	<licenses>
@@ -36,9 +36,9 @@
 
 	<!-- SOURCE CONTROL MANAGEMENT -->
 	<scm>
-		<connection>scm:svn:https://compss.bsc.es/svn/bar/tutorial-apps/python/</connection>
-		<developerConnection>scm:svn:https://compss.bsc.es/svn/bar/tutorial-apps/python/</developerConnection>
-		<url>https://compss.bsc.es/svn/bar/tutorial-apps/python/</url>
+		<connection>scm:svn:https://compss.bsc.es/svn/bar/tutorial-apps/python/notebooks/</connection>
+		<developerConnection>scm:svn:https://compss.bsc.es/svn/bar/tutorial-apps/python/notebooks/</developerConnection>
+		<url>https://compss.bsc.es/svn/bar/tutorial-apps/python/notebooks/</url>
 	</scm>
 
 	<!-- REPOSITORIES -->
@@ -100,14 +100,7 @@
 
 	<!-- SUB-MODULES -->
 	<modules>
-		<module>increment</module>
-    <module>matmul_files</module>
-	  <module>matmul_objects</module>
-		<module>neurons</module>
-		<module>notebooks</module>
-    <module>simple</module>
-		<module>wordcount</module>
-    <module>wordcount_blocks</module>
-    <module>wordcount_merge</module>
+		<module>hands-on</module>
+    <module>syntax</module>
 	</modules>
 </project>
