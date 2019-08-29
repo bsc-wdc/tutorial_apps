@@ -100,7 +100,7 @@
 
 	<!-- SUB-MODULES -->
 	<modules>
-		<module>hands-on</module>
-    <module>syntax</module>
+		<!-- <module>hands-on</module> -->
+		<!-- <module>syntax</module> -->
 	</modules>
 </project>
