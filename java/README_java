@@ -44,7 +44,7 @@
 
    WordCount
     cd /home/compss/tutorial_apps/java/wordcount/jar/
-    runcompss wordcount.uniqueFile.Wordcount /home/compss/tutorial_apps/java/wordcount/data/file_short.txt 650
+    runcompss wordcount.uniqueFile.Wordcount /home/compss/tutorial_apps/java/wordcount/data/file_small.txt 650
 
 ==================== TRACING COMPSs APPS ======================
 1- Add the -t option to the runcompss
