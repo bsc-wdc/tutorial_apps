@@ -42,7 +42,7 @@
 		<url>https://compss.bsc.es/svn/bar/tutorial-apps/java/</url>
 	</scm>
 
-	<!-- REPOSITORIES -->
+	<!-- REPOSITORIES >
 	<repositories>
 		<repository>
 			<snapshots>
@@ -71,7 +71,7 @@
 			<name>Central Repository</name>
 			<url>http://repo1.maven.apache.org/maven2</url>
 		</pluginRepository>
-	</pluginRepositories>
+	</pluginRepositories-->
 
 	<!-- DISTRIBUTION MANAGEMENT -->
 	<distributionManagement>

@@ -35,7 +35,7 @@
                         <!-- Copy XML templates -->
                         <plugin>
                                 <artifactId>maven-resources-plugin</artifactId>
-                                <version>2.6.rc2001</version>
+				<version>${maven-resources-plugin.version}</version>
                                 <executions>
                                         <execution>
                                                 <id>copy-resources</id>
