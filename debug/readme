@@ -1,0 +1,22 @@
+# Debug session demo
+
+# Exceptions:
+runcompss mandel_exception_main.py 10
+runcompss -d mandel_exception_main.py 10
+runcompss mandel_exception_task.py 10
+runcompss -d mandel_exception_task.py 10
+
+# Usage of non-serializable objects:
+runcompss non_serializable_parameter.py
+runcompss -d non_serializable_parameter.py
+runcompss non_serializable_return.py
+runcompss -d non_serializable_return.py
+
+# Connectivity problems:
+runcompss -d --project=xml/badres_project.xml --resources=xml/badres_resources.xml mandel.py 10
+runcompss -d --project=xml/default_project.xml --resources=xml/default_resources.xml mandel.py 10
+
+# Java examples:
+runcompss Matrixmean.Matrixmean 8
+runcompss -i Matrixmean.Matrixmean 8
+runcompss -d Matrixmean.Matrixmean 8

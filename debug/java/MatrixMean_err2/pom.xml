@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>es.bsc.compss.apps</groupId>
+  <artifactId>MatrixMean</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+   <properties>
+                <!-- COMPSs version -->
+                <compss.version>2.6</compss.version>
+
+                <!-- JUNIT Test -->
+                <junit.version>4.12</junit.version>
+
+                <!-- Version maven -->
+                <versions-maven-plugin.version>2.3</versions-maven-plugin.version>
+                <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+
+                <!-- Maven Plugins -->
+                <maven.compiler.source>1.8</maven.compiler.source>
+                <maven.compiler.target>1.8</maven.compiler.target>
+                <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
+                <maven-shade-plugin.version>2.4.3</maven-shade-plugin.version>
+                <maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
+                <maven-exec-plugin.version>1.4.0</maven-exec-plugin.version>
+                                                                                                                                                                                                                                            
+                <!-- Project encoding -->
+                <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+                <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        </properties>
+  <dependencies>
+		<dependency>
+			<groupId>es.bsc.compss</groupId>
+			<artifactId>compss-api</artifactId>
+			<version>${compss.version}</version>
+		</dependency>
+	</dependencies>
+  <build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+							<silent>true</silent>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>copy-final-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/jar</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.build.directory}</directory>
+									<includes>
+										<include>${project.artifactId}.jar</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			</plugins>
+			</build>
+			
+</project>

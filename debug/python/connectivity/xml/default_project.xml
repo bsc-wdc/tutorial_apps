@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project>
+    <MasterNode/>
+    <ComputeNode Name="bscgrid06.bsc.es">
+        <InstallDir>/home/jorgee/COMPSs_2.4/</InstallDir>
+        <WorkingDir>/home/fconejer/worker</WorkingDir>
+    </ComputeNode>
+</Project>
