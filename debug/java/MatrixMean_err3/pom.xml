@@ -25,7 +25,22 @@
                 <!-- Project encoding -->
                 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
                 <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        </properties>
+	</properties>
+	<repositories>
+                <repository>
+                        <snapshots>
+                                <enabled>false</enabled>
+                        </snapshots>
+                        <id>central</id>
+                        <name>Central Repository</name>
+                        <url>https://repo.maven.apache.org/maven2/</url>
+                </repository>
+                <repository>
+                        <id>grid-repo</id>
+                        <name>BSC Grid computing and Clusters group</name>
+                        <url>http://compss.bsc.es/artifactory/libs-release</url>
+                </repository>
+        </repositories>
   <dependencies>
 		<dependency>
 			<groupId>es.bsc.compss</groupId>

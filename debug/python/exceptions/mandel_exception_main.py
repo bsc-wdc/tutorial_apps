@@ -62,7 +62,7 @@ def mandelbrot(X, Y, Z, points):
 
 if __name__ == "__main__":
     X = arange(-2, .5, .01)
-    Y = arange(-1.0,  1.0, .01)
+    Y = arange(-1.0,  1.0, .5)
     Z = [[] for _ in range(len(Y))]
     n = int(sys.argv[1])
 
