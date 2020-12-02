@@ -1,5 +1,6 @@
 # Ignore maven files
 dependency-reduced-pom.xml
+pom.xml.versionsBackup
 
 # Ignore JAXB files
 compss/runtime/config/xml/monitor/src/main/
