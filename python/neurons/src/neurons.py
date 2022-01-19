@@ -68,7 +68,7 @@ def cc_surrogate_range(fspikes, start_idx, end_idx, seed, num_neurons, num_surrs
     print("- num_bins:", num_bins)
     print("- maxlag:", maxlag)
     random.seed(seed)
-    f = open(fspikes, 'r')
+    f = open(fspikes, 'rb')
     spikes = pickle.load(f)
     idx = 0
     row = 0
