@@ -95,7 +95,7 @@
 					<arguments>
 						<argument>-m</argument>
 						<argument>wordcount.uniqueFile.Wordcount</argument>
-						<argument>${basedir}/data/file_short.txt</argument>
+						<argument>${basedir}/data-set/file_small.txt</argument>
 						<argument>650</argument>
 					</arguments>
 				</configuration>
