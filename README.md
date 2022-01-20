@@ -35,7 +35,7 @@ Update Tutorial apps:
 $ rm -rf tutorial_apps 
 $ git clone https://github.com/bsc-wdc/tutorial_apps.git
 ```
-Install COMPSS-PYCOMPSS CLI:
+Install COMPSS-PyCOMPSS CLI:
 
 ```
 $ sudo python3 -m pip install pycompss-cli
@@ -43,37 +43,34 @@ $ sudo python3 -m pip install pycompss-cli
 
 ### Python Hands-on
 
-Initialize a PyCOMPSs docker environment
+Initialize a PyCOMPSs docker environment.
 
 ```
 $ pycompss init -n docker-tutorial docker -i compss/compss-tutorial:2.10
 ```
 
-Start monitor
+Start monitor.
 
 ```
 $ pycompss monitor start
 ```
 
-Start Jupyter-notebook
+Start Jupyter Notebook.
 
 ```
 $ pycompss jupyter
 ```
 
-Open a web browser with the address: http://localhost:8888
+Once started, open a web browser with the address: http://localhost:8888
+Follow the instructions of the Jupyter notebook, and at the end of the hands-on session, follow the instructions to clean the environment. 
 
-Follow the instructions of the Jupyter notebook. 
-
-At the end of the hands-on session: 
-
-Stop the monitor
+Stop the monitor.
 
 ```
 $ pycompss monitor stop
 ```
 
-Remove the docker environment
+Remove the PyCOMPSs docker environment.
 
 ```
 $ pycompss environment remove docker-tutorial 
@@ -83,13 +80,14 @@ $ pycompss environment remove docker-tutorial
 ### Java Hands-on 
 
 
-Compile the application
+Compile the application.
 
 ```
 $ cd /home/compss/tutorial_apps/java/wordcount
 $ mvn clean install
 ```
-Initialize a COMPSs docker 
+
+Initialize a COMPSs docker environment. 
 
 ```
 $ compss init -n docker-tutorial docker -i compss/compss-tutorial:2.10
@@ -97,7 +95,7 @@ $ compss init -n docker-tutorial docker -i compss/compss-tutorial:2.10
 
 Follow the exercises to develop the wordcount application. 
 
-To run the application:
+Run the application.
 
 ```
 $ compss run --classpath=jar/wordcount.jar wordcount.uniqueFile.Wordcount data-set/file_small.txt 650
@@ -105,33 +103,33 @@ $ compss run --classpath=jar/wordcount.jar wordcount.uniqueFile.Wordcount data-s
 
 To enable an execution with monitoring:
 
-Start the monitor
+Start the monitor.
 
 ```
 $ compss monitor start
 ```
 Open a browser in URL http://localhost:8080/compss-monitor
 
-Run the application with monitoring flags
+Run the application with monitoring flags.
 
 ```
 $ compss run -m --classpath=jar/wordcount.jar wordcount.uniqueFile.Wordcount data-set/file_long.txt 350000
 ```
 
-Simulate the execution with different workers
+Simulate the execution with different workers.
  
-To check the used resources run:
+- To check the used resources run use the following commands:
 
 ```
 $ compss exec cat /project.xml
 $ compss exec cat /resources.xml
 ```
 
-Include two worker nodes
+- Include two worker nodes.
 ```
 $ compss components add worker 2
 ```
-Run again the application with monitoring flags
+- Run again the application with monitoring flags
 
 ```
 $ compss run -m --classpath=jar/wordcount.jar wordcount.uniqueFile.Wordcount data-set/file_long.txt 350000
