@@ -108,7 +108,7 @@ Start the monitor.
 ```
 $ compss monitor start
 ```
-Open a browser in URL http://localhost:8080/compss-monitor
+Open a browser in URL http://localhost:8080/compss-monitor and enter an log-in with an empty user.
 
 Run the application with monitoring flags.
 
@@ -144,7 +144,7 @@ $ evince .COMPSs/wordcount.uniqueFile.Wordcount_04/monitor/complete_graph.pdf
 Run the application with debug information
 
 ```
-$ compss run -d --classpath=jar/wordcount.jar wordcount.uniqueFile.Wordcount /home/compss/workspace_java/wordcount/data/file_small.txt 650
+$ compss run -d --classpath=jar/wordcount.jar wordcount.uniqueFile.Wordcount data-set/file_small.txt 650
 ```
 
 Stop the monitor
@@ -186,9 +186,3 @@ Remove the docker environment
 $ compss environment remove docker-tutorial
 ```
 
-
-
-
-
-
-a
