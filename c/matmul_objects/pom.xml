@@ -8,7 +8,7 @@
 	<parent>	
                 <groupId>es.bsc.compss.tutorial-apps.c</groupId>	
 		<artifactId>compss-tutorial-apps-c</artifactId>
-    		<version>2.10</version>
+    		<version>2.10.rc2202</version>
     		<relativePath>..</relativePath>
 	</parent>
 	
