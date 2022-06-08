@@ -11,17 +11,17 @@
 *** Commands to run the C/C++ COMPSs applications ***
    Simple:
      cd /home/compss/tutorial_apps/c/simple/
-     buildapp simple
+     compss_build_app simple
      runcompss --lang=c --project=./xml/project.xml --resources=./xml/resources.xml /home/compss/tutorial_apps/c/simple/master/simple 1
 
    Increment:
      cd /home/compss/tutorial_apps/c/increment/
-     buildapp increment
+     compss_build_app increment
      runcompss --lang=c --project=./xml/project.xml --resources=./xml/resources.xml /home/compss/tutorial_apps/c/increment/master/increment 5 1 2 3
 
    Matmul:
      cd /home/compss/tutorial_apps/c/matmul_objects/
-     buildapp Matmul
+     compss_build_app Matmul
      runcompss --lang=c --project=./xml/project.xml --resources=./xml/resources.xml /home/compss/tutorial_apps/c/matmul_objects/master/Matmul 8 4 12.3
 
 

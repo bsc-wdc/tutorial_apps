@@ -24,5 +24,5 @@ runcompss --lang=c /home/compss/tutorial_apps/c/simple/master/simple 1
 
 
 == Build ==
-buildapp simple
+compss_build_app simple
 
