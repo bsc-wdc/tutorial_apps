@@ -31,5 +31,5 @@ runcompss --lang=c /home/compss/tutorial_apps/c/matmul_objects/master/Matmul 8 4
 
 
 == Build ==
-buildapp Matmul
+compss_build_app Matmul
 

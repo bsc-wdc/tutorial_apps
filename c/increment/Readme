@@ -27,5 +27,5 @@ runcompss --lang=c /home/compss/tutorial_apps/c/increment/master/increment 10 1 
 
 
 == Build ==
-buildapp increment
+compss_build_app increment
 
