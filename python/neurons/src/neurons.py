@@ -166,7 +166,7 @@ if __name__ == "__main__":
     pickle.dump(cc_original,f)
     f.close()
 
-    f = open('./result_cc_surrogates_conf.dat','w')
+    f = open('./result_cc_surrogates_conf.dat','wb')
     cc_surrs = compss_wait_on(cc_surrs)
     #print("Surrogates(", start_idx, "-", end_idx, "):", cc_surrs[start_idx:end_idx,:,:]))
     pickle.dump(cc_surrs,f)

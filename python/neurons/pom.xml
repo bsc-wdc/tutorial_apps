@@ -61,7 +61,7 @@
                         <argument>--lang=python</argument>
                         <argument>--pythonpath=${basedir}/src/</argument>
                         <argument>${basedir}/src/neurons.py</argument>
-                        <argument>8</argument>
+                        <argument>128</argument>
                         <argument>${basedir}/data/spikes.dat</argument>
                     </arguments>
                     <skip>false</skip>
