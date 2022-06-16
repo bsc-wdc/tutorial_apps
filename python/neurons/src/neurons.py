@@ -69,7 +69,7 @@ def cc_surrogate_range(fspikes, start_idx, end_idx, seed, num_neurons, num_surrs
     print("- maxlag:", maxlag)
     random.seed(seed)
     f = open(fspikes, 'rb')
-    spikes = pickle.load(f)
+    spikes = pickle.load(f, encoding='bytes')
     idx = 0
     row = 0
     my_cc_original = zeros((end_idx-start_idx,2*maxlag+1))
@@ -155,7 +155,7 @@ if __name__ == "__main__":
     print("submitted all tasks")
 
     #save results
-    f = open('./result_cc_originals.dat','w')
+    f = open('./result_cc_originals.dat','wb')
     cc_original = compss_wait_on(cc_original)
 
     end = time.time()
