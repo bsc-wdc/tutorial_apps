@@ -7,7 +7,7 @@
     <parent>
         <groupId>es.bsc.compss.tutorial-apps.python</groupId>
         <artifactId>compss-tutorial-apps-python</artifactId>
-        <version>3.1.rc2301</version>
+        <version>3.1.rc2302</version>
         <relativePath>..</relativePath>
     </parent>
     <!-- PROJECT INFORMATION -->
