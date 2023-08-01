@@ -8,7 +8,7 @@
 	<parent>
                 <groupId>es.bsc.compss.tutorial-apps.java</groupId>
 		<artifactId>compss-tutorial-apps-java</artifactId>
-		<version>3.2.rc2307</version>
+		<version>3.2.rc2308</version>
 		<relativePath>..</relativePath>
 	</parent>
 
