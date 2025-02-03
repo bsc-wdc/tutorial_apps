@@ -70,6 +70,8 @@
 	<!-- SUB-MODULES -->
 	<modules>
 		<module>increment</module>
+		<module>integral_pi_iterative</module>
+		<module>integral_pi_reduction</module>
     <module>matmul_files</module>
 	  <module>matmul_objects</module>
 		<module>neurons</module>

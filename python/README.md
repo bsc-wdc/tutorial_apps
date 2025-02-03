@@ -24,6 +24,20 @@ cd ~/tutorial_apps/python/increment/
 runcompss src/increment.py 10 1 2 3
 ```
 
+* Integral PI iterative
+
+```
+cd ~/tutorial_apps/python/integral_pi_iterative/
+runcompss src/integral_pi_iterative.py 100000 10
+```
+
+* Integral PI reduction
+
+```
+cd ~/tutorial_apps/python/integral_pi_reduction/
+runcompss src/integral_pi_reduction.py 100000 10
+```
+
 * Matmul files
 
 ```
@@ -95,7 +109,7 @@ jupyter-notebook <NOTEBOOK_NAME>.ipynb
 
 ## Tracing PyCOMPSs Apps
 
-1. Add the ```-t``` option to the runcompss (or the ```tracing=True``` flag when starting the runtime in the notebooks).
+1. Add the ```-t``` option to the runcompss (or the ```--tracing=True``` flag when starting the runtime in the notebooks).
 2. Execute paraver:
    ```
    wxparaver ~/.COMPSs/APPNAME_EXEC/trace/*.prv
@@ -112,7 +126,7 @@ jupyter-notebook <NOTEBOOK_NAME>.ipynb
    ```
    /etc/init.d/compss-monitor start
    ```
-2. Add the ```-m``` option to the runcompss (or the ```monitor=<REFRESH_RATE>``` flag when starting the runtime in the notebooks).
+2. Add the ```-m``` option to the runcompss (or the ```--monitor=<REFRESH_RATE>``` flag when starting the runtime in the notebooks).
 3. Open the webpage:
    ```
    firefox http://localhost:8080/compss-monitor

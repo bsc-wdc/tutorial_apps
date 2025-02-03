@@ -1,0 +1,31 @@
+This is the Readme for:
+Integral PI reduction
+
+[Name]: Integral PI reduction
+[Contact Person]: support-compss@bsc.es
+[Access Level]: public
+[License Agreement]: Apache2
+[Platform]: COMPSs
+
+[Body]
+== Description ==
+This application calculates the value of PI by integration with reduction.
+
+
+== Execution instructions ==
+Usage:
+runcompss --lang=python src/integral_pi_reduction.py <num_steps> <num_batches>
+
+where:
+        * - num_steps: Number steps to divide the area
+        * - num_batches: Number of groups of steps to be computed per task
+
+
+== Execution Examples ==
+runcompss --lang=python src/integral_pi_reduction.py 100000 10
+runcompss src/integral_pi_reduction.py 100000 10
+python -m pycompss src/integral_pi_reduction.py 100000 10
+
+
+== Build ==
+No build is required
