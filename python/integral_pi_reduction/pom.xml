@@ -61,10 +61,8 @@
                         <argument>--lang=python</argument>
                         <argument>--pythonpath=${basedir}/src/</argument>
                         <argument>${basedir}/src/integral_pi_reduction.py</argument>
-                        <argument>5</argument>
-                        <argument>1</argument>
-                        <argument>2</argument>
-                        <argument>3</argument>
+                        <argument>100000</argument>
+                        <argument>100</argument>
                     </arguments>
                     <skip>false</skip>
                 </configuration>
