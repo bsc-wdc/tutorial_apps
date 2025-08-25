@@ -34,15 +34,15 @@ Since LLM models are memory intensive and require GPUs for reasonable performanc
 ## Execution instructions
 
 Usage:
-    bash objects/launch_llm.sh <NUM_NODES> <DATASET_PATH> <OLLAMA_MODEL_PATH>
-    or
+    bash objects/launch_llm.sh <NUM_NODES> <DATASET_PATH> <OLLAMA_MODEL_PATH>  
+    or  
     bash streams/launch_llm_stream.sh <NUM_NODES> <DATASET_PATH> <OLLAMA_MODEL_PATH>
 
-where:
-    * - NUM_NODES: Number of cluster nodes to use for the job.
-    * - DATASET_PATH: Absolute path of the BBC News CSV dataset.
-    * - OLLAMA_MODEL_PATH: Absolute path of Qwen3:14B directory.
+where:  
+- NUM_NODES: Number of cluster nodes to use for the job.  
+- DATASET_PATH: Absolute path of the BBC News CSV dataset.  
+- OLLAMA_MODEL_PATH: Absolute path of Qwen3:14B directory.  
 
 
-== Execution Examples ==
-    bash objects/launch_llm.sh 2 $(pwd)/dataset/bbc-text.csv $(pwd)/models/
+== Execution Examples ==  
+`bash objects/launch_llm.sh 2 $(pwd)/dataset/bbc-text.csv $(pwd)/models/`
