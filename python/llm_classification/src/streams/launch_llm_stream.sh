@@ -1,3 +1,7 @@
+module load tensorflow
+module unload openmpi impi
+module load COMPSs/3.3.3
+
 NUM_NODES=$1
 DATASET_PATH=$2
 OLLAMA_MODEL_PATH=$3
