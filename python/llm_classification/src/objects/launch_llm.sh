@@ -4,7 +4,8 @@ module load COMPSs/3.3.3
 
 NUM_NODES=$1
 DATASET_PATH=$2
-OLLAMA_MODEL_PATH=$3
+OLLAMA_BIN_PATH=$3
+OLLAMA_MODEL_PATH=$4
 
 export OLLAMA_MODELS=$OLLAMA_MODEL_PATH
 
@@ -19,4 +20,4 @@ enqueue_compss \
     --qos=acc_debug \
     --pythonpath=$(pwd) \
     --python_interpreter=$(which python3) \
-    --lang=python main_llm_objects.py $NUM_NODES $DATASET_PATH
+    --lang=python main_llm_objects.py $NUM_NODES $DATASET_PATH $OLLAMA_BIN_PATH

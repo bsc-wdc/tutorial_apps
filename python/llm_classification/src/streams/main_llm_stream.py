@@ -18,12 +18,11 @@ from pycompss.streams.distro_stream import ObjectDistroStream
 
 CTX_SIZE = 8192
 
-def start_ollama(cwd):
+def start_ollama(OLLAMA_BIN_PATH):
     gpu_id = int(os.environ['CUDA_VISIBLE_DEVICES'])
     host_port = f'127.0.0.1:{11434+gpu_id}'
 
     environ = deepcopy(os.environ)
-    environ['OLLAMA_MODELS'] = cwd + '/models'
     environ['OLLAMA_FLASH_ATTENTION'] = '1'
     environ['OLLAMA_HOST'] = host_port
     environ['OLLAMA_NUM_PARALLEL'] = '1'
@@ -34,16 +33,16 @@ def start_ollama(cwd):
     if 'ROCR_VISIBLE_DEVICES' in environ:
         del environ['ROCR_VISIBLE_DEVICES']
 
-    proc = subprocess.Popen(['./ollm/bin/ollama', 'serve'], env=environ, cwd=cwd)
+    proc = subprocess.Popen([OLLAMA_BIN_PATH, 'serve'], env=environ)
     return proc, host_port
 
 @constraint(processors=[{'processorType':'CPU', 'computingUnits':'1'},
                         {'processorType':'GPU', 'computingUnits':'1'}])
 @task(stream_docs=STREAM_IN, stream_class=STREAM_OUT)
-def ollama_task(cwd, stream_docs, stream_class, CATEGORIES):
+def ollama_task(OLLAMA_BIN_PATH, stream_docs, stream_class, CATEGORIES):
     import pyextrae.multiprocessing as pyextrae
 
-    ollama_proc, host_port = start_ollama(cwd)
+    ollama_proc, host_port = start_ollama(OLLAMA_BIN_PATH)
 
     client = Client(host=host_port)
 
@@ -75,13 +74,14 @@ def ollama_task(cwd, stream_docs, stream_class, CATEGORIES):
 if __name__ == '__main__':
     import pyextrae.sequential as pyextrae
 
-    if len(sys.argv) < 3:
+    if len(sys.argv) < 4:
         print('ERROR: Bad number of parameters')
-        print(f'Usage: {sys.argv[0]} <NUM_GPUS> <BBC_DATASET_PATH>')
+        print(f'Usage: {sys.argv[0]} <NUM_GPUS> <BBC_DATASET_PATH> <OLLAMA_BIN_PATH>')
         sys.exit(1)
 
     NUM_GPUS = int(sys.argv[1])
     DATASET_PATH = sys.argv[2]
+    OLLAMA_BIN_PATH = sys.argv[3]
 
     # LOAD DATASET
     bbc_df = pd.read_csv(DATASET_PATH)
@@ -97,7 +97,7 @@ if __name__ == '__main__':
     
     # START OLLAMA SERVER FOR EACH GPU
     for gid in range(NUM_GPUS):
-        ollama_task(cwd, stream_docs, stream_class, categories)
+        ollama_task(OLLAMA_BIN_PATH, stream_docs, stream_class, categories)
 
     # SEND NEWS ARTICLES TO THE OLLAMA TASKS
     for i, news in enumerate(bbc_df['text'].tolist()):

@@ -21,7 +21,7 @@ CTX_SIZE = 8192
 @constraint(processors=[{'processorType':'CPU', 'computingUnits':'1'},
                         {'processorType':'GPU', 'computingUnits':'4'}])
 @task(is_distributed=True)
-def start_ollama(cwd):
+def start_ollama(OLLAMA_BIN_PATH):
     hostname = socket.gethostname()
     host_ports = []
     for gpu_id_str in os.environ['CUDA_VISIBLE_DEVICES'].split(','):
@@ -30,7 +30,6 @@ def start_ollama(cwd):
         host_port = f'0.0.0.0:{port}'
 
         environ = deepcopy(os.environ)
-        environ['OLLAMA_MODELS'] = cwd + '/models'
         environ['OLLAMA_FLASH_ATTENTION'] = '1'
         environ['OLLAMA_HOST'] = host_port
         environ['OLLAMA_NUM_PARALLEL'] = str(PARALLEL_QUERIES)
@@ -42,11 +41,11 @@ def start_ollama(cwd):
         if 'ROCR_VISIBLE_DEVICES' in environ:
             del environ['ROCR_VISIBLE_DEVICES']
 
-        subprocess.Popen(['./ollm/bin/ollama', 'serve'], env=environ, cwd=cwd)
-
-        sleep(5)
+        subprocess.Popen([OLLAMA_BIN_PATH, 'serve'], env=environ)
 
         host_ports.append(f'{hostname}:{port}')
+
+    sleep(10)
     return host_ports
 
 
@@ -69,13 +68,14 @@ def query_prompt(host_port, prompt, system_prompt=''):
     return resp.response.strip().lower()
 
 if __name__ == '__main__':
-    if len(sys.argv) < 3:
+    if len(sys.argv) < 4:
         print('ERROR: Bad number of parameters')
-        print(f'Usage: {sys.argv[0]} <NUM_NODES> <BBC_DATASET_PATH>')
+        print(f'Usage: {sys.argv[0]} <NUM_NODES> <BBC_DATASET_PATH> <OLLAMA_BIN_PATH>')
         sys.exit(1)
 
     NUM_NODES = int(sys.argv[1])
     DATASET_PATH = sys.argv[2]
+    OLLAMA_BIN_PATH = sys.argv[3]
 
     # LOAD DATASET
     bbc_df = pd.read_csv(DATASET_PATH)
